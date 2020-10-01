@@ -2,6 +2,7 @@ FROM webdevops/php-apache:latest
 MAINTAINER Niklas Droste <docker-images@ndroste.de>
 
 RUN a2enmod substitute
+COPY substitute.conf /opt/docker/etc/httpd/vhost.common.d/substitute.conf
 
 WORKDIR /app
 RUN chown www-data:www-data -R /app
